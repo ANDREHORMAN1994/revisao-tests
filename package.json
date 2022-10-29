@@ -21,12 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "trybe-frontend"
-    ]
+    "eject": "react-scripts eject",
+    "lint:styles": "npx stylelint '**/*.css'",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx"
   },
   "browserslist": {
     "production": [
