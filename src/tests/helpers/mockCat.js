@@ -1,9 +1,9 @@
 const mockCat = [
   {
-    id: 'bl8',
-    url: 'https://cdn2.thecatapi.com/images/bl8.jpg',
-    width: 400,
-    height: 549,
+    id: 'BJRS3Kpxk',
+    url: 'https://cdn2.thecatapi.com/images/BJRS3Kpxk.jpg',
+    width: 450,
+    height: 600,
   },
 ];
 
