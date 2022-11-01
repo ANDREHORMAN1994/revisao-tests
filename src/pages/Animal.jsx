@@ -18,22 +18,24 @@ import Context from '../context/contex';
 const endpointDog = 'https://dog.ceo/api/breeds/image/random';
 const endpointCat = 'https://api.thecatapi.com/v1/images/search';
 
+export const requestApi = async (endpoint) => {
+  if (!endpoint) throw new Error('Endpoint is required');
+
+  try {
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(`Erro ao fazer a requisição: ${error.message}`);
+  }
+};
+
 function Animal() {
   const {
     animalImg,
     setAnimalImg } = useContext(Context);
   const [loading, setLoading] = useState(false);
   const [animalName, setAnimalName] = useState('Cat');
-
-  const requestApi = async (endpoint) => {
-    try {
-      const response = await fetch(endpoint);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.log(`Erro ao fazer a requisição: ${error.message}`);
-    }
-  };
 
   const handleAnimal = useCallback(async () => {
     let imgUrl = '';
@@ -76,6 +78,7 @@ function Animal() {
       >
         DOGS VS CATS
       </Typography>
+      <h1>{ JSON.parse(localStorage.getItem('user'))?.email || 'não existe email' }</h1>
       <Grid container sx={ { height: '100vh', background: '#e5e5e5' } }>
         <Grid item xs={ 12 } sx={ { margin: 'auto' } }>
           <Card sx={ { maxWidth: 500, margin: 'auto' } }>

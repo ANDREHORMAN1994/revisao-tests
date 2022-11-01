@@ -76,10 +76,13 @@ function Login() {
         </CardContent>
         <CardActions>
           <Fab
-            onClick={ () => history.push('/animal') }
+            onClick={ () => {
+              localStorage.setItem('user', JSON.stringify({ email: 'teste@trybe.com' }));
+              history.push('/animal');
+            } }
             variant="extended"
             color="primary"
-            aria-label="add"
+            aria-label="Login"
             size="large"
             sx={ { margin: 'auto',
               padding: '30px 45px',
